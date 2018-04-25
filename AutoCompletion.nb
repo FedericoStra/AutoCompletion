@@ -1,0 +1,262 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7373,        253]
+NotebookOptionsPosition[      5742,        194]
+NotebookOutlinePosition[      6370,        219]
+CellTagsIndexPosition[      6286,        214]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["AutoCompletion", "Title",
+ CellChangeTimes->{{3.7336463834755774`*^9, 3.733646388224481*^9}}],
+
+Cell[TextData[{
+ "for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " < v9.0"
+}], "Subtitle",
+ CellChangeTimes->{{3.733646391623678*^9, 3.733646400844624*^9}, {
+  3.733646765375724*^9, 3.733646794967535*^9}}],
+
+Cell["Federico Stra, April 2018", "Subsubtitle",
+ CellChangeTimes->{{3.733646407424232*^9, 3.733646409415473*^9}, {
+  3.733646458315115*^9, 3.733646468915379*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Installation", "Section",
+ CellChangeTimes->{{3.733646476573574*^9, 3.733646478472267*^9}}],
+
+Cell[TextData[{
+ "Copy the package ",
+ StyleBox["AutoCompletion.m",
+  FontWeight->"Bold"],
+ " to the user ",
+ StyleBox["Applications",
+  FontSlant->"Italic"],
+ " folder, which can be found with the following command:"
+}], "Text",
+ CellChangeTimes->{{3.733646482583775*^9, 3.733646491702043*^9}, {
+  3.7336465602417307`*^9, 3.733646566316687*^9}, {3.733646708518602*^9, 
+  3.73364673605942*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FileNameJoin", "[", 
+  RowBox[{"{", 
+   RowBox[{"$UserBaseDirectory", ",", "\"\<Applications\>\""}], "}"}], 
+  "]"}]], "Input"],
+
+Cell[TextData[{
+ "The package can then be located automatically by the standard ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " loading mechanism."
+}], "Text",
+ CellChangeTimes->{{3.7336468543287477`*^9, 3.733646888681137*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Usage", "Section",
+ CellChangeTimes->{{3.733646850458438*^9, 3.733646850963183*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Loading", "Subsection",
+ CellChangeTimes->{{3.733647216009255*^9, 3.73364721776508*^9}}],
+
+Cell["\<\
+Load the package by issuing the command\
+\>", "Text",
+ CellChangeTimes->{{3.733647004054592*^9, 3.7336470166611*^9}, {
+  3.733647138713863*^9, 3.733647139156062*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<AutoCompletion`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.733646908218367*^9, 3.733646922508082*^9}}],
+
+Cell["\<\
+Alternatively, it is safe to directly run the package (even multiple times) \
+with\
+\>", "Text",
+ CellChangeTimes->{{3.7336471019048023`*^9, 3.733647114381667*^9}, {
+  3.733647147630472*^9, 3.733647163410185*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "AutoCompletion`"}]], "Input",
+ CellChangeTimes->{{3.733647116924054*^9, 3.73364712030131*^9}}],
+
+Cell[TextData[{
+ "This imports the function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"AutoComplete", "[", "]"}], TraditionalForm]],
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.733647023731284*^9, 3.73364704006779*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "AutoComplete"}]], "Input",
+ CellChangeTimes->{{3.73364704962759*^9, 3.733647051534252*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"AutoComplete[\\!\\(\\*StyleBox[\\\"flag\\\", \\\"TI\\\"]\\)] \
+turns autocompletion on or off by passing \\!\\(\\*StyleBox[\\\"flag\\\", \
+\\\"TI\\\"]\\) equal to True or False.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.73364705205344*^9},
+ CellTags->"Info3733654252-4617658"]
+}, Open  ]],
+
+Cell["\<\
+which is used to switch autocompletion on or off for the current notebook.\
+\>", "Text",
+ CellChangeTimes->{{3.7336471725190372`*^9, 3.733647195951433*^9}, {
+  3.733647249149651*^9, 3.733647249208313*^9}}],
+
+Cell[BoxData[
+ RowBox[{"AutoComplete", "[", "True", "]"}]], "Input",
+ CellChangeTimes->{{3.7336478481599693`*^9, 3.7336478537462873`*^9}}],
+
+Cell["\<\
+The setting for the autocompletion is saved in the notebook and is persistent \
+across sessions.\
+\>", "Text",
+ CellChangeTimes->{{3.733647691786458*^9, 3.733647747824565*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection",
+ CellChangeTimes->{{3.7336472108953657`*^9, 3.7336472120448647`*^9}}],
+
+Cell["\<\
+Define a few symbols starting with \[OpenCurlyDoubleQuote]long\
+\[CloseCurlyDoubleQuote]:\
+\>", "Text",
+ CellChangeTimes->{{3.733647293679085*^9, 3.733647315263523*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"longVariable", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"longFunction", "[", "]"}], ":=", "42"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"longA", ",", "longB", ",", "longC"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.733646018191729*^9, 3.733646081089077*^9}, {
+  3.733647287369084*^9, 3.733647288633542*^9}}],
+
+Cell[TextData[{
+ "Try hitting ",
+ StyleBox["\[TabKey]",
+  FontSize->16],
+ " while the cursor is on the word \[OpenCurlyDoubleQuote]long\
+\[CloseCurlyDoubleQuote]. You will cycle through all possible completions. \
+You can also press ",
+ StyleBox["\[ControlKey]",
+  FontSize->16],
+ "+",
+ StyleBox["\[TabKey]",
+  FontSize->16],
+ " to cycle backwards."
+}], "Text",
+ CellChangeTimes->{{3.733647373406692*^9, 3.733647472729806*^9}}],
+
+Cell[BoxData[
+ RowBox[{"x", "+", 
+  RowBox[{"f", "[", 
+   RowBox[{"long", "+", "z"}], "]"}], "+", "y"}]], "Input",
+ CellChangeTimes->{{3.733647317958048*^9, 3.733647318262074*^9}, 
+   3.7336475560905743`*^9, {3.733647598665063*^9, 3.7336475996255817`*^9}, {
+   3.733647822641017*^9, 3.7336478611365643`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+NotebookEventActions->{},
+WindowSize->{683, 716},
+WindowMargins->{{-10, Automatic}, {Automatic, -10}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
+  CharacterEncoding -> "UTF-8"],
+"AutoComplete" -> {}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3733654252-4617658"->{
+  Cell[3279, 117, 322, 5, 62, "Print",
+   CellTags->"Info3733654252-4617658"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3733654252-4617658", 6183, 208}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 99, 1, 66, "Title"],
+Cell[681, 25, 215, 7, 24, "Subtitle"],
+Cell[899, 34, 163, 2, 26, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1087, 40, 97, 1, 76, "Section"],
+Cell[1187, 43, 394, 11, 49, "Text"],
+Cell[1584, 56, 151, 4, 40, "Input"],
+Cell[1738, 62, 234, 6, 49, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2009, 73, 90, 1, 76, "Section"],
+Cell[CellGroupData[{
+Cell[2124, 78, 94, 1, 37, "Subsection"],
+Cell[2221, 81, 176, 4, 30, "Text"],
+Cell[2400, 87, 146, 2, 40, "Input"],
+Cell[2549, 91, 223, 5, 30, "Text"],
+Cell[2775, 98, 124, 2, 40, "Input"],
+Cell[2902, 102, 229, 7, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3156, 113, 120, 2, 40, "Input"],
+Cell[3279, 117, 322, 5, 62, "Print",
+ CellTags->"Info3733654252-4617658"]
+}, Open  ]],
+Cell[3616, 125, 215, 4, 30, "Text"],
+Cell[3834, 131, 138, 2, 40, "Input"],
+Cell[3975, 135, 186, 4, 49, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4198, 144, 99, 1, 37, "Subsection"],
+Cell[4300, 147, 179, 4, 30, "Text"],
+Cell[4482, 153, 479, 12, 79, "Input"],
+Cell[4964, 167, 427, 14, 59, "Text"],
+Cell[5394, 183, 308, 6, 40, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
