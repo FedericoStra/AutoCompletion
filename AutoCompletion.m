@@ -6,7 +6,7 @@
 (*  :Title: Enable TAB-autocompletion for Mathematica < 9.0 *)
 (*  :Author: Federico Stra *)
 (*  :Summary: *)
-(*  :Context: Let` *)
+(*  :Context: *)
 (*  :Package Version: 1.0 *)
 (*  :Copyright: Copyright 2018, Federico Stra *)
 (*  :History: *)
